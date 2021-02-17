@@ -31,29 +31,29 @@ EOF
 resource "aws_s3_bucket_policy" "hugo" {
   bucket = aws_s3_bucket.hugo.id
   policy = <<EOF
-  {
-    "Version" : "2012-10-17",
-    "Statement" : [
-      {
-        "Sid" : "PublicRead",
-        "Effect" : "Allow",
-        "Principal" : "*",
-        "Action" : "s3:GetObject",
-        "Resource" : "arn:aws:s3:::${local.bucket_name}/public/*"
+{
+  "Version" : "2012-10-17",
+  "Statement" : [
+    {
+      "Sid" : "PublicRead",
+      "Effect" : "Allow",
+      "Principal" : "*",
+      "Action" : "s3:GetObject",
+      "Resource" : "arn:aws:s3:::${local.bucket_name}/public/*"
+    },
+    {
+      "Sid" : "PutWebsite",
+      "Effect" : "Allow",
+      "Principal" : {
+        "AWS" : ["${var.deploy_arn}"]
       },
-      {
-        "Sid" : "PutWebsite",
-        "Effect" : "Allow",
-        "Principal" : {
-          "AWS" : ["${var.deploy_arn}"]
-        },
-        "Action" : [
-          "s3:PutObject",
-          "s3:PutObjectAcl"
-        ],
-        "Resource" : "arn:aws:s3:::${local.bucket_name}/public/*"
-      }
-    ]
-  }
+      "Action" : [
+        "s3:PutObject",
+        "s3:PutObjectAcl"
+      ],
+      "Resource" : "arn:aws:s3:::${local.bucket_name}/public/*"
+    }
+  ]
+}
 EOF
 }
