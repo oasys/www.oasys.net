@@ -39,7 +39,7 @@ resource "aws_s3_bucket_policy" "hugo" {
       "Effect" : "Allow",
       "Principal" : "*",
       "Action" : "s3:GetObject",
-      "Resource" : "arn:aws:s3:::${local.bucket_name}/public/*"
+      "Resource" : "arn:aws:s3:::${local.bucket_name}/*"
     },
     {
       "Sid" : "PutWebsite",
@@ -51,7 +51,7 @@ resource "aws_s3_bucket_policy" "hugo" {
         "s3:PutObject",
         "s3:PutObjectAcl"
       ],
-      "Resource" : "arn:aws:s3:::${local.bucket_name}/public/*"
+      "Resource" : "arn:aws:s3:::${local.bucket_name}/*"
     }
   ]
 }
