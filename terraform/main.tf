@@ -29,7 +29,7 @@ EOF
 }
 
 resource "aws_s3_bucket_policy" "hugo" {
-  bucket = local.bucket_name
+  bucket = aws_s3_bucket.hugo.id
   policy = <<EOF
   {
     "Version" : "2012-10-17",
