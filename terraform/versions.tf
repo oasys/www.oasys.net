@@ -5,7 +5,7 @@ terraform {
     hostname     = "app.terraform.io"
     organization = "oasys"
     workspaces {
-      name = "blog"
+      name = "www-oasys-net"
     }
   }
 

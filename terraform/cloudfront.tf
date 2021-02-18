@@ -1,16 +1,21 @@
-data "aws_acm_certificate" "cert" {
-  domain = "*.oasys.net"
+resource "aws_acm_certificate" "cert" {
+  domain_name       = var.domain
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
-resource "aws_cloudfront_distribution" "hugo" {
+resource "aws_cloudfront_distribution" "dist" {
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
 
   origin {
-    domain_name = aws_s3_bucket.hugo.website_endpoint
-    origin_id   = aws_s3_bucket.hugo.id
+    domain_name = aws_s3_bucket.public.website_endpoint
+    origin_id   = aws_s3_bucket.public.id
     custom_origin_config {
       http_port              = "80"
       https_port             = "443"
@@ -24,7 +29,7 @@ resource "aws_cloudfront_distribution" "hugo" {
     compress               = true
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = aws_s3_bucket.hugo.id
+    target_origin_id       = aws_s3_bucket.public.id
     min_ttl                = 0
     default_ttl            = 86400
     max_ttl                = 31536000
@@ -37,7 +42,7 @@ resource "aws_cloudfront_distribution" "hugo" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = data.aws_acm_certificate.cert.arn
+    acm_certificate_arn = aws_acm_certificate.cert.arn
     ssl_support_method  = "sni-only"
   }
 

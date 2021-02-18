@@ -1,3 +1,3 @@
-output "s3_url" {
-  value = aws_s3_bucket.hugo.website_endpoint
+output "website" {
+  value = aws_cloudfront_distribution.dist.domain_name
 }

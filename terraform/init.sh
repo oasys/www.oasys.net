@@ -41,7 +41,7 @@ done
 IAM_USER=$(aws iam create-access-key --user-name "${REPO}")
 
 # initialize workspace
-ws="${REPO}"
+ws=${REPO//[^[:alnum:]_-]/-}
 export TFH_org=$ORG
 
 # create workspace and add github repo
@@ -64,5 +64,7 @@ tfh pushvars -name "$ws" \
 # set initial workspace variables
 tfh pushvars -name "$ws" \
   -hcl-var "tags={}" \
+  -var "domain=${REPO}" \
+  -overwrite domain \
   -var "deploy_arn=$(aws iam get-user --user-name "${REPO}" | jq -r '.User.Arn')" \
   -overwrite deploy_arn
