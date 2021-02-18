@@ -3,21 +3,21 @@ data "aws_acm_certificate" "cert" {
 }
 
 resource "aws_cloudfront_distribution" "hugo" {
+  enabled             = true
+  is_ipv6_enabled     = true
+  default_root_object = "index.html"
+  price_class         = "PriceClass_100"
+
   origin {
+    domain_name = aws_s3_bucket.hugo.website_endpoint
+    origin_id   = aws_s3_bucket.hugo.id
     custom_origin_config {
       http_port              = "80"
       https_port             = "443"
       origin_protocol_policy = "http-only"
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
-
-    domain_name = aws_s3_bucket.hugo.website_endpoint
-    origin_id   = aws_s3_bucket.hugo.id
   }
-
-  enabled             = true
-  is_ipv6_enabled     = true
-  default_root_object = "index.html"
 
   default_cache_behavior {
     viewer_protocol_policy = "redirect-to-https"
@@ -28,7 +28,6 @@ resource "aws_cloudfront_distribution" "hugo" {
     min_ttl                = 0
     default_ttl            = 86400
     max_ttl                = 31536000
-
     forwarded_values {
       query_string = false
       cookies {
@@ -36,7 +35,6 @@ resource "aws_cloudfront_distribution" "hugo" {
       }
     }
   }
-
 
   viewer_certificate {
     acm_certificate_arn = data.aws_acm_certificate.cert.arn
