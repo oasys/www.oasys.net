@@ -3,6 +3,12 @@ resource "aws_s3_bucket" "public" {
   acl           = "public-read"
   force_destroy = true
 
+  # checkov:skip=CKV_AWS_21:versioning not needed
+  # checkov:skip=CKV_AWS_18:access logging disabled for cost savings
+  # checkov:skip=CKV_AWS_19:encryption disabled, public bucket
+  # checkov:skip=CKV_AWS_20:public bucket
+  # checkov:skip=CKV_AWS_52:no MFA delete, not canonical source
+
   website {
     index_document = "index.html"
     error_document = "404.html"

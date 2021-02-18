@@ -8,6 +8,9 @@ resource "aws_cloudfront_distribution" "dist" {
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
 
+  # checkov:skip=CKV_AWS_68:do not require WAF to reduce costs
+  # checkov:skip=CKV_AWS_86:no access logging
+
   origin {
     domain_name = aws_s3_bucket.public.website_endpoint
     origin_id   = aws_s3_bucket.public.id
