@@ -1,0 +1,118 @@
+baseURL: https://www.oasys.net
+title: Jason Lavoie
+paginate: 20
+theme: PaperMod
+
+enableRobotsTXT: true
+enableGitInfo: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: G-4XLCGXZ2W0
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # to enable <summary> disclosure tag
+
+deployment:
+  order: [.png$, .jpg$, .gif$, .svg$]
+  targets:
+    URL: s3://www.oasys.net?region=us-east-1
+    cloudFrontDistributionID: E2GOHKG4OK8ZRL
+  matchers:
+  - pattern: ^.+\.(js|css|png|jpg|gif|svg|ttf)$
+    cacheControl: max-age=630720000, no-transform, public
+    gzip: true
+  - pattern: ^.+\.(html|xml|json)$
+    gzip: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Oasys
+  description: Oasys Blog
+  author: Jason Lavoie
+  images: [jason.jpg]
+
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  disableSpecial1stPost: true
+  comments: false
+  hidemeta: false
+  showtoc: false
+  tocopen: false
+
+  showBreadCrumbs: true
+  showPostNavLinks: true
+
+  label:
+    text: Jason Lavoie
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  profileMode:
+    enabled: true
+    title: Jason Lavoie
+    subtitle: ratvarre sbe uver
+    imageUrl: jason.jpg
+    imageTitle: Photo of Jason Lavoie
+    buttons:
+    - name: Posts
+      url: /posts/
+    - name: About
+      url: /about/
+    - name: Search
+      url: /search/
+
+  socialIcons:
+  - name: github
+    url: https://github.com/oasys
+  - name: linkedin
+    url: https://www.linkedin.com/in/jlavoie/
+  - name: twitter
+    url: https://twitter.com/ratvarre
+  - name: email
+    url: mailto:jason@oasys.net
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: [title, permalink, summary, content]
+
+menu:
+  main:
+  - identifier: categories
+    name: categories
+    url: /categories/
+    weight: 10
+  - identifier: tags
+    name: tags
+    url: /tags/
+    weight: 20
+  - identifier: search
+    name: search
+    url: /search/
+    weight: 30
+  - identifier: about
+    name: about
+    url: /about/
+    weight: 40
