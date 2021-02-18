@@ -7,6 +7,7 @@ resource "aws_cloudfront_distribution" "dist" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
+  aliases             = [var.domain]
 
   # checkov:skip=CKV_AWS_68:do not require WAF to reduce costs
   # checkov:skip=CKV_AWS_86:no access logging
