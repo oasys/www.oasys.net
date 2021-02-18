@@ -22,7 +22,7 @@ POLICIES=(
   IAMFullAccess
   AmazonS3FullAccess
   CloudFrontFullAccess
-  AWSCertificateManagerFullAccess
+  AWSCertificateManagerReadOnly
 )
 aws iam create-user --user-name "${REPO}"
 for policy in "${POLICIES[@]}"; do
