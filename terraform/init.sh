@@ -47,7 +47,10 @@ export TFH_org=$ORG
 # create workspace and add github repo
 if ! tfh ws show -name "$ws" >/dev/null 2>&1; then
   echo "creating workspace $ws"
-  tfh ws new -name "$ws" -vcs-id "${ORG}/${REPO}"
+  tfh ws new -name "$ws" \
+    -vcs-id "${ORG}/${REPO}" \
+    -auto-apply \
+    -working-dir "terraform"
 fi
 
 # set workspace environment variables for authentication to aws
