@@ -11,6 +11,7 @@ Code to build and deploy www.oasys.net.
 3. Terraform Cloud (TFC) account
 4. GitHub
 5. Github configured as a VCS provider for the TFC organization
+6. Github cli (gh) configured with access to create secrets in the repo
 
 ### Terraform
 
@@ -23,6 +24,7 @@ First, run the `init.sh` script to:
 - create a TFC workspace
 - connect the TFC workspace with the GitHub repository
 - supply environment credentials and initial terraform variables to the workspace
+- add AWS credentials as GitHub secrets to the repository
 
 Next, apply the terraform configuration to build the infrastructure.
 

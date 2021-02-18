@@ -5,6 +5,7 @@
 #  - connects them to the github repo
 #  - creates an azure service principal
 #  - adds sp credentials to the workspace environment variables
+#  - adds aws credentials to github repo for deploy action
 
 ORG=$(dirname "$(git remote get-url origin)" | cut -d: -f2)
 REPO=$(basename -s .git "$(git remote get-url origin)")
@@ -68,3 +69,14 @@ tfh pushvars -name "$ws" \
   -overwrite domain \
   -var "deploy_arn=$(aws iam get-user --user-name "${REPO}" | jq -r '.User.Arn')" \
   -overwrite deploy_arn
+
+if ! type "gh" > /dev/null 2>&1 ; then
+  echo "please install and configure github cli (https://github.com/cli/cli)"
+  exit 1
+else
+  echo "adding AWS secrets to repo for deploy action"
+  gh secret set AWS_ACCESS_KEY_ID -r "${REPO}" \
+    --body "$(echo "$IAM_USER" | \jq -r .AccessKey.AccessKeyId)"
+  gh secret set AWS_SECRET_ACCESS_KEY -r "${REPO}" \
+    --body "$(echo "$IAM_USER" | \jq -r .AccessKey.SecretAccessKey)"
+fi
