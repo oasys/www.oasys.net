@@ -93,3 +93,6 @@ tags
 [._]*.un~
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo,vim,terraform,macos
+
+# htmltest cache
+/.htmltest

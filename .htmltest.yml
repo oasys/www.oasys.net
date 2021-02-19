@@ -1,0 +1,11 @@
+DirectoryPath: public
+OutputDir: .htmltest
+CacheExpires: 6h
+# htmltest segfaults on nonexisting anchors like #center in hugo markdown
+CheckInternalHash: false
+EnforceHTML5: true
+EnforceHTTPS: true
+IgnoreURLs:
+- twitter.com
+IgnoreCanonicalBrokenLinks: false
+TestFilesConcurrently: true
