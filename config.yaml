@@ -1,5 +1,5 @@
 baseURL: https://www.oasys.net
-title: Jason Lavoie
+title: Oasys Networking
 paginate: 20
 theme: PaperMod
 
@@ -54,12 +54,12 @@ params:
   showPostNavLinks: true
 
   label:
-    text: Jason Lavoie
+    text: Oasys Networking
     icon: /apple-touch-icon.png
-    iconHeight: 35
+    iconHeight: 45
 
   profileMode:
-    enabled: true
+    enabled: false
     title: Jason Lavoie
     subtitle: ratvarre sbe uver
     imageUrl: jason.jpg
@@ -112,7 +112,7 @@ menu:
     name: search
     url: /search/
     weight: 30
-  - identifier: about
-    name: about
-    url: /about/
-    weight: 40
+#  - identifier: about
+#    name: about
+#    url: /about/
+#    weight: 40

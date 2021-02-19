@@ -6,6 +6,8 @@ tags:
   - github actions
   - networking
   - cloud
+categories:
+  - networking
 author: "Jason Lavoie"
 showToc: true
 TocOpen: false
