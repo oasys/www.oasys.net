@@ -6,12 +6,11 @@ Code to build and deploy www.oasys.net.
 
 ### Prerequisites
 
-1. AWS account with local permissions (for `init.sh`)
-2. Validated wildcard cert for `*.oasys.net` in AWS certificate manager.
-3. Terraform Cloud (TFC) account
-4. GitHub
-5. Github configured as a VCS provider for the TFC organization
-6. Github cli (gh) configured with access to create secrets in the repo
+- AWS account with local permissions (for `init.sh`)
+- Validated wildcard cert for `*.oasys.net` in AWS certificate manager.
+- Terraform Cloud (TFC) account
+- Github configured as a VCS provider for the TFC organization
+- Github cli (gh) configured with access to create secrets in the repo
 
 ### Terraform
 
@@ -31,3 +30,30 @@ Next, apply the terraform configuration to build the infrastructure.
 Last, run the `update_cdn.sh` script to set the CDN distribution ID
 in the hugo site config.  This is used for CDN cache invalidation at
 deploy-time.
+
+### Hugo
+
+Install [hugo](https://gohugo.io).
+
+```sh
+brew install hugo
+```
+
+## Local Editing
+
+```sh
+hugo server -D
+```
+
+## Deploy
+
+### Automatic
+
+Push the changes to the `main` branch on GitHub, and the deploy workflow
+will re-deploy the entire site.
+
+### Manual
+
+```sh
+hugo deploy
+```
