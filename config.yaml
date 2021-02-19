@@ -89,9 +89,11 @@ params:
     url: mailto:jason@oasys.net
 
   cover:
-    hidden: true # hide everywhere but not in structured data
+    hidden: false # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    hiddenInSingle: false # hide on single page
+    responsiveImages: true
+    linkFullImages: false
 
   # for search
   # https://fusejs.io/api/options.html

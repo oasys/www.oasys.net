@@ -1,5 +1,6 @@
 ---
 title: "Terraform Drift Detection with GitHub Actions"
+author: "Jason Lavoie"
 date: 2020-09-15T11:30:03+00:00
 tags:
   - terraform
@@ -8,7 +9,6 @@ tags:
   - cloud
 categories:
   - networking
-author: "Jason Lavoie"
 showToc: true
 TocOpen: false
 draft: false
@@ -20,6 +20,11 @@ description: |
 disableShare: false
 disableHLJS: false
 searchHidden: false
+cover:
+    image: "snowdrift.jpg"
+    alt: "GitHub Drift Success"
+    caption: "[Snowdrift New Zealand Snow Winter Magic](https://pixabay.com/photos/snowdrift-new-zealand-snow-4081280/) by [adege](https://pixabay.com/users/adege-4994132/) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)"
+    relative: true
 
 ---
 
