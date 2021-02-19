@@ -45,6 +45,10 @@ params:
   author: Jason Lavoie
   images: [jason.jpg]
 
+  mainSections:
+  - posts
+  - fragments
+
   defaultTheme: auto
   disableThemeToggle: false
 
