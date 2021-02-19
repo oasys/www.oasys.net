@@ -11,6 +11,12 @@ buildExpired: false
 
 googleAnalytics: UA-190146902-1
 
+outputs:
+  home:
+  - HTML
+  - RSS
+  - JSON
+
 minify:
   disableXML: true
   minifyOutput: true

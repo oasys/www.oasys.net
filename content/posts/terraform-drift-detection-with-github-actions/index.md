@@ -19,7 +19,7 @@ description: |
   infrastructure.
 disableShare: false
 disableHLJS: false
-searchHidden: true
+searchHidden: false
 
 ---
 
