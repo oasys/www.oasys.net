@@ -3,6 +3,7 @@ title: Oasys Networking
 paginate: 20
 theme: PaperMod
 
+defaultContentLanguage: en
 enableRobotsTXT: true
 enableGitInfo: true
 buildDrafts: false
