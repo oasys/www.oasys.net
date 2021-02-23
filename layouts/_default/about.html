@@ -1,0 +1,22 @@
+{{- define "main" }}
+<div class=post-content>
+  <h2>{{- .Title }}</h2>
+
+  {{- with .Site.Params.profileMode }}
+  <div class="about">
+  {{- if .imageUrl}}
+    <div>
+    <img src="{{ .imageUrl}}" alt="{{ .imageTitle | default "profile image" }}"
+        height="{{- .imageHeight | default 120 -}}" width="{{- .imageWidth | default 120 -}}" />
+    </div>
+  {{- end}}
+  </div>
+  {{- end }}
+
+  {{- .Content }}
+  </div>
+
+  {{- partial "social_icons.html" .Site.Params.socialIcons -}}
+
+</div>
+{{- end }}

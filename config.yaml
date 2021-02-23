@@ -73,15 +73,8 @@ params:
     enabled: false
     title: Jason Lavoie
     subtitle: ratvarre sbe uver
-    imageUrl: jason.jpg
+    imageUrl: /jason.jpg
     imageTitle: Photo of Jason Lavoie
-    buttons:
-    - name: Posts
-      url: /posts/
-    - name: About
-      url: /about/
-    - name: Search
-      url: /search/
 
   socialIcons:
   - name: github
@@ -129,7 +122,7 @@ menu:
     name: search
     url: /search/
     weight: 30
-#  - identifier: about
-#    name: about
-#    url: /about/
-#    weight: 40
+  - identifier: about
+    name: about
+    url: /about/
+    weight: 40
