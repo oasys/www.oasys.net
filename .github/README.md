@@ -55,5 +55,6 @@ will re-deploy the entire site.
 ### Manual
 
 ```sh
+hugo
 hugo deploy
 ```
