@@ -45,3 +45,11 @@ repos:
     - --check-filenames
     - --check-hidden
     - --ignore-words=.codespell-ignore
+- repo: local
+  hooks:
+  - id: check-hugo
+    name: Check Hugo site syntax
+    always_run: true
+    pass_filenames: false
+    language: system
+    entry: hugo --renderToMemory --quiet
