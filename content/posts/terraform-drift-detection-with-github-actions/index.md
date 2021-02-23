@@ -144,7 +144,7 @@ to see the details.
 This is a really simple way to get automated feedback for any drift in your
 terraform-managed infrastructure.
 
-## Walkthrough
+## Walk-through
 
 In sharing with the team how this works, I recorded a short video of me getting
 an alert and finding the cause.  This time, it was something innocuous, but it
