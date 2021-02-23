@@ -1,5 +1,5 @@
 ---
-title: "My Title"
+title: "{{ humanize .Name }}"
 tags:
   - tags here
 categories:
