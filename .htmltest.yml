@@ -7,5 +7,7 @@ EnforceHTML5: true
 EnforceHTTPS: true
 IgnoreURLs:
 - twitter.com
+- linkedin.com
+- pixabay.com
 IgnoreCanonicalBrokenLinks: false
 TestFilesConcurrently: true
