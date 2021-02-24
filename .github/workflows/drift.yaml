@@ -17,4 +17,5 @@ jobs:
       run: terraform init
     - name: Terraform plan
       id: plan
+      working-directory: terraform
       run: terraform plan -no-color -detailed-exitcode
