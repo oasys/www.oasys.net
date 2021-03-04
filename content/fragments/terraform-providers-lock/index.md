@@ -88,3 +88,5 @@ index 4b490bd..eef9494 100644
 
 Commit and add to the repo, and the Terraform Cloud run should now run
 without (this) error.
+
+![Successful run](terraform-lock-file-success.png#center)
