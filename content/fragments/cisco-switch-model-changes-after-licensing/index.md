@@ -16,6 +16,10 @@ description: |
 disableShare: false
 disableHLJS: false
 searchHidden: false
+cover:
+    image: "sticker.jpg"
+    alt: "Cisco 3850 model number sticker"
+    relative: true
 
 ---
 
@@ -32,7 +36,7 @@ Out of the box, with the `ipbase` license, the switch shows up as an "-S" model.
 
 This matches the physical sticker on the back of the unit.
 
-![Photo of sticker](sticker.jpg)
+![Photo of sticker highlighting model](sticker-model.jpg)
 
 Then, he activated a different license, `ipservices`.
 
