@@ -28,7 +28,7 @@ After updating the provider definitions, I ran `terraform init` and
 received the following error:
 
 ```bash
-sapphire:~/azure/sqlmi/(dev*$%=)[eastus]$ tf init
+sapphire:~/azure/sqlmi/(dev*$%=)[eastus]$ terraform init
 [...]
 
 Initializing the backend...
@@ -71,7 +71,7 @@ Only 'yes' will be accepted to continue.
 Enter a value: yes
 
 Successfully replaced provider for 25 resources.
-sapphire:~/azure/sqlmi/(dev*$%=)[eastus]$ tf state replace-provider "registry.terraform.io/-/random" "hashicorp/random"
+sapphire:~/azure/sqlmi/(dev*$%=)[eastus]$ terraform state replace-provider "registry.terraform.io/-/random" "hashicorp/random"
 Terraform will perform the following actions:
 
   ~ Updating provider:
@@ -93,7 +93,7 @@ Successfully replaced provider for 1 resources.
 Now, I do a prospective plan to make everything is working as expected:
 
 ```bash
-sapphire:~/azure/sqlmi/(dev*$%=)[eastus]$ tf plan
+sapphire:~/azure/sqlmi/(dev*$%=)[eastus]$ terraform plan
 Running plan in the remote backend. Output will stream here. Pressing Ctrl-C
 will stop streaming the logs, but will not stop the plan running remotely.
 
