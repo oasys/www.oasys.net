@@ -13,7 +13,7 @@ regional and large national providers.  I have also had to opportunity
 to complete various consulting projects in the areas of network design,
 content distribution, systems integration, and cloud enablement.
 
-I'd like to share tidbits and thoughts about what I'm currently working
+I love sharing tidbits and thoughts about what I'm currently working
 on, both for my own reference and as a way to help others who might be
 trying to solve a similar issue or problem.
 
