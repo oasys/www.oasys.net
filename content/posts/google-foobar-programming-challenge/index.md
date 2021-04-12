@@ -26,10 +26,10 @@ cover:
 ## My experience
 
 A couple of months ago, while searching google for some odd
-python syntax, I received an invitation.  I documented my
-code progress and experience over the next week in a [GitHub
-repository](https://github.com/oasys/google-foobar), and am
-sharing the results and solutions here.
+python syntax, I received an invitation.  I documented my code
+progress and experience over the following week in a [GitHub
+repository](https://github.com/oasys/google-foobar) as I solved
+each one of the problems.  This was a ton of fun!
 
 ## What is the Google Foobar Challenge
 
