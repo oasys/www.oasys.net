@@ -102,4 +102,4 @@ class module, I believe `defined()` will work as expected.
 [iteration]: https://puppet.com/docs/puppet/latest/lang_iteration.html
 [slack]: https://slack.puppet.com
 [Iterating in Puppet]: https://www.devco.net/archives/2015/12/16/iterating-in-puppet.php
-[ducks]: http://puppet-on-the-edge.blogspot.com/2014/04/getting-your-puppet-ducks-in-row.html
+[ducks]: https://puppet-on-the-edge.blogspot.com/2014/04/getting-your-puppet-ducks-in-row.html
