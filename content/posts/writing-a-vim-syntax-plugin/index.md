@@ -19,7 +19,7 @@ searchHidden: false
 cover:
     image: "cisco_ios_show_cdp_neighbors_detail.textfsm.png"
     alt: "example TextFSM template with syntax highlighting"
-    caption: "[example TextFSM template](https://github.com/networktocode/ntc-templates/blob/master/templates/cisco_ios_show_cdp_neighbors.textfsm) with syntax highlighting"
+    caption: "[example TextFSM template](https://github.com/networktocode/ntc-templates/blob/master/ntc_templates/templates/cisco_ios_show_cdp_neighbors.textfsm) with syntax highlighting"
     relative: true
 
 ---
