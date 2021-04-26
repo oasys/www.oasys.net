@@ -84,5 +84,5 @@ This added about 300GB to the local archive.  Now, I have fully-automated
 PXE netboot installs for Ubuntu.
 
 [ftpsync]: https://manpages.debian.org/buster/ftpsync/ftpsync.1.en.html
-[mirror]: http://mirror.bowdoin.edu
+[mirror]: https://mirror.bowdoin.edu
 [ubuntu]: https://ubuntu.com
