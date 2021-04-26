@@ -1,0 +1,146 @@
+name: Jason Lavoie
+email: jason.lavoie@gmail.com
+phone: '2078375805'
+website: www.oasys.net
+github: oasys
+
+sections:
+
+- heading: Work History
+  subsections:
+  - heading: Bowdoin College, Director of Networking and Infrastructure
+    startdate: Aug. 2003
+    points:
+    - Principal network architect for a prestigious liberal arts college.
+    - >-
+      Lead a team in engineering and operations of network, telecom, cloud,
+      and datacenter infrastructure.
+
+  - heading: Prexar, Lead Network Engineer
+    startdate: June 2001
+    enddate: Aug. 2003
+    points:
+    - >-
+      Managed and expanded ATM network, colocation datacenter,
+      and DSL services for a large regional ISP.
+
+  - heading: Adelphia Business Solutions, Director of Network Engineering
+    startdate: Oct. 1999
+    enddate: June 2001
+    points:
+    - >-
+      Designed and implemented a scalable and robust infrastructure for a
+      national commercial webhosting product.
+    - Led project development for flexible ASP systems in a shared environment.
+
+  - heading: The Maine InternetWorks (MINT), Network Engineer
+    startdate: May 1993
+    enddate: Oct. 1999
+    points:
+    - >-
+      Responsible for design and implementation of network, servers,
+      and telco facilities for a 20,000+ user ISP.
+    - >-
+      Designed and deployed municipal and residential cable modem networks
+      for multiple cable companies.
+
+- heading: Notable Experience
+  subsections:
+
+  - heading: Hybrid Cloud Connectivity
+    points:
+    - >-
+      Design, implement, and support flexible and reliable networking
+      between on-prem, AWS, and Azure.
+    - >-
+      Used supporting technologies such as Internet2 CloudConnect, Direct Connect,
+      Transit Gateway, ExpressRoute, Virtual WAN
+
+  - heading: Project Management
+    points:
+    - >-
+      Managed multiple $10M+ projects from inception to completion, including
+      design, vendor/product selection, internal justification and budgeting,
+      migration and deployment logistics, training, and operational support.
+
+  - heading: Wireless Networking
+    points:
+    - >-
+      Performed extensive "real world" evaluation and comparison of
+      next-generation wireless from multiple vendors.
+    - Deployed campus wireless network in numerous RF-challenging environments.
+
+  - heading: IP Telephony
+    points:
+    - >-
+      Migrated a 3000-extension campus phone system from a legacy PBX to
+      Cisco VoIP solution, including integration of features such as
+      unified messaging, E911 service, two-way radio interoperability,
+      call recording,  SIP trunking, and presence.
+
+  - heading: Kuwait Stock Exchange Online Trading System
+    points:
+    - >-
+      Technical lead for project to make live trading information available
+      to exchange members. Innovated elegant solutions for site-redundancy,
+      database synchronization, transparent failover, and interfaces to
+      proprietary exchange protocols.
+
+  - heading: Network Performance and Analysis Tools
+    points:
+    - >-
+      Built infrastructure to collect and analyze metrics for ISP and
+      customer network elements, featuring Netflow visualization,
+      per-AS tracking for justification of potential peering/transit
+      arrangements, and real-time tracking of DoS attacks
+      and security incidents.
+
+  - heading: Mentoring and Teaching
+    points:
+    - >-
+      Founded an internship program at Bowdoin College to mentor individuals
+      beginning a networking career.
+    - Taught group classes for IT staff to obtain CCNA certification.
+    - >-
+      Former Adjunct Professor at Kennebec Valley Technical College
+      for "Intro to Unix" class.
+
+  - heading: Comprehensive Campus Network Upgrade
+    hide: true     # trim some entries to fit on single page
+    points:
+    - >-
+      Completed 2004 upgrade of network supporting 17,000+ ports across
+      100 buildings with minimal disruption under very tight scheduling
+      constraints. We are currently planning the next upgrade.
+
+  - heading: Trouble Ticket System
+    hide: true     # trim some entries to fit on single page
+    points:
+    - >-
+      Developed trouble ticket system for managing and tracking customer
+      contact for Technical Support, Account Billing, and Sales.
+      Integrated (web-based and command line) user tools.
+      Used programmatic report generation used for forecasting and
+      establishing performance goals.
+      In production for 4 years; over a million tickets.
+
+- heading: Education
+  subsections:
+
+  - heading: University of Maine, B.S. Electrical Engineering
+    enddate: Dec. 1997
+    body: 'Senior Project: "Hardware data encryption system, Full DES implementation on a 68HC11-based platform."'
+
+- heading: Skills and Technologies
+  points:
+  - >-
+    Networking: Cisco (IOS, NXOS, IOS-XR, UCS),
+    Juniper (EX, SRX, MX),
+    F5 (LTM, GTM, ASM),
+    Aruba (Wireless, ClearPass)
+  - >-
+    Infrastructure management: Terraform, Puppet, SaltStack, Ansible
+  - >-
+    Programming Languages: Python, Perl, Bash, Ruby
+  - >-
+    Cloud providers: AWS and Azure

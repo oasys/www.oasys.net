@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <main>
+    {{ with .Site.Data.resume }}
+      <div class="box">
+        <div class="wrap">
+          {{ partial "resume/header.html" . }}
+          {{ range .sections }} {{ partial "resume/section.html" . }} {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </main>
+{{ end }}

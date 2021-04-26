@@ -1,0 +1,37 @@
+<section>
+  <h2>{{ .heading }}</h2>
+  {{ with .body }}<p>{{ . }}</p>{{ end }}
+  {{ with .points }}
+    <ul>
+      {{ range . }}
+        <li>{{ . | markdownify }}</li>
+      {{ end }}
+    </ul>
+  {{ end }}
+  {{ range .subsections }}
+    {{ if not .hide }}<div>
+      {{ if .heading }}
+        <div class="heading-line">
+          <h3>{{ .heading }}</h3>
+          <h3>
+            {{ if .startdate }}{{ .startdate }} - {{ end }}
+            {{ if .enddate }}{{ .enddate }}{{ else if .startdate}}Present{{ end }}
+          </h3>
+        </div>
+      {{ end }}
+      {{ range .degrees }}
+        <p>
+          <em>{{ . }}</em>
+        </p>
+      {{ end }}
+      {{ with .body }}<p>{{ . }}</p>{{ end }}
+      {{ with .points }}
+        <ul>
+          {{ range . }}
+            <li>{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>{{ end }}
+  {{ end }}
+</section>
