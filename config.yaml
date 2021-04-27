@@ -26,6 +26,13 @@ markup:
   goldmark:
     renderer:
       unsafe: true  # to enable <summary> disclosure tag
+  highlight:
+    lineNos: false
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    style: solarized-dark256
+    tabwidth: 2
 
 deployment:
   order: [.png$, .jpg$, .gif$, .svg$]
@@ -103,6 +110,9 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: [title, permalink, summary, content]
+
+  assets:
+    disableHLJS: true
 
 menu:
   main:
