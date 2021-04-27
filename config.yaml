@@ -59,9 +59,11 @@ params:
 
   defaultTheme: auto
   disableThemeToggle: false
+  disableScrollToTop: false
 
   ShowReadingTime: true
   ShowShareButtons: true
+  ShowCodeCopyButtons: true
   disableSpecial1stPost: true
   comments: false
   hidemeta: false
