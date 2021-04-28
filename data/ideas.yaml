@@ -1,0 +1,51 @@
+# future blog ideas
+# and associated notes, links, comments
+
+ideas:
+- title: custom enc
+- title: a good commit message
+  links:
+  - https://stephenhouser.com/development/2018-04-06-good-commit-messages.html
+- title: rename branches
+  comments: |
+    move-to-main = !git up && git br -m master main && git push -u origin main && hub api repos/{owner}/{repo} -X PATCH -F default_branch=main >/dev/null && git push origin :master
+    move-to-master = !git up && git br -m main master && git push -u origin master && hub api repos/{owner}/{repo} -X PATCH -F default_branch=master >/dev/null && git push origin :main
+- title: punycode emoji dns names
+- title: video camera in AWS
+- title: mkspf
+- title: mkrdns
+- title: pre-commit
+- title: contract negotiations
+  points:
+  - minivan, house
+- title: okta lambda@edge
+- title: why deadends are useful
+  examples:
+  - okta project
+- title: why blog
+  links:
+  - incited by https://networkphil.com/2021/02/16/five-ways-to-jump-start-your-career-in-tech-in-2021/
+- title: github repos by topic sorted by stars
+  links:
+  - https://github.com/starkblaze01/Star-Count
+- title: close ports on a cisco device
+  description: How to list open ports (command not in parser)
+  example: |
+    cisco-2921#sh control-plane host open-ports
+    Active internet connections (servers and established)
+    Prot               Local Address             Foreign Address                  Service    State
+     tcp                        *:22                         *:0               SSH-Server   LISTEN
+     tcp                        *:23                         *:0                   Telnet   LISTEN
+     tcp                        *:22            10.10.0.32:60350               SSH-Server ESTABLIS
+     tcp                      *:2443                         *:0     Skinny Socket Server   LISTEN
+     tcp                      *:1720                         *:0                    H.225   LISTEN
+     tcp                      *:2000                         *:0 Cisco Call manager serve   LISTEN
+     udp                        *:67                         *:0            DHCPD Receive   LISTEN
+     udp                     *:61584               10.9.0.32:514                   Syslog ESTABLIS
+     udp                       *:123                         *:0                      NTP   LISTEN
+     udp                      *:4500                         *:0                   ISAKMP   LISTEN
+     udp                     *:64619              10.10.0.32:514                   Syslog ESTABLIS
+     udp                       *:161                         *:0                  IP SNMP   LISTEN
+     udp                       *:162                         *:0                  IP SNMP   LISTEN
+     udp                     *:61519                         *:0                  IP SNMP   LISTEN
+     udp                       *:500                         *:0                   ISAKMP   LISTEN
