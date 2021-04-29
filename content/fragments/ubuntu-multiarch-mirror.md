@@ -69,12 +69,14 @@ ARCH_INCLUDE="amd64 source"
 Looking at my options to fix this, I could:
 
 1. remove the architecture with a `dpkg --remove-architecture i386`
-2. try to disable multiarch with a `preseed` command
-3. add the i386 binaries to the mirror
+1. try to disable multiarch with a `preseed` command
+1. specify `deb [arch=amd64] https://...` in each of the apt sources
+   to [override][multiarch-sources] the architectures apt uses
+1. add the i386 binaries to the mirror
 
 I wanted others to be able to use this without any additional
-configuration so I chose 3 and just added `i386` to the list in
-`ftpsync-ubuntu.conf` and manually ran the mirror script.
+configuration so I chose the last option and just added `i386` to the
+list in `ftpsync-ubuntu.conf` and manually ran the mirror script.
 
 ```bash
 ARCH_INCLUDE="amd64 i386 source"
@@ -86,3 +88,4 @@ PXE netboot installs for Ubuntu.
 [ftpsync]: https://manpages.debian.org/buster/ftpsync/ftpsync.1.en.html
 [mirror]: https://mirror.bowdoin.edu
 [ubuntu]: https://ubuntu.com
+[multiarch-sources]: https://wiki.debian.org/Multiarch/HOWTO#Setting_up_apt_sources
