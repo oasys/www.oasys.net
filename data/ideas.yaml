@@ -50,3 +50,10 @@ ideas:
      udp                     *:61519                         *:0                  IP SNMP   LISTEN
      udp                       *:500                         *:0                   ISAKMP   LISTEN
 - title: bigswitch inline topology
+- title: do not blindly trust your tools
+  example: |
+    trusting shellcheck and adjusting quoting on cloudflare provision script
+- title: updating a terraform provider
+  example: |
+    experiences with go programming and adding a secondary zone resource
+    type to cloudflare provider
