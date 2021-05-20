@@ -462,7 +462,7 @@ index 35b46f4..6614bf2 100644
 
 ### Sequencing
 
-Each of the above changes must be applied in sequence.  Since the
+Each of the above changes must be applied in sequence because the
 `azurerm_template_deployment` does not have the output value in its
 state until it is redeployed.  Performing a terraform apply will update
 the template in place and redeploy.  Since it is redeployed in the same
