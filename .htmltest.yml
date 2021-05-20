@@ -9,5 +9,6 @@ IgnoreURLs:
 - twitter.com
 - linkedin.com
 - pixabay.com
+- reddit.com/submit
 IgnoreCanonicalBrokenLinks: false
 TestFilesConcurrently: true
