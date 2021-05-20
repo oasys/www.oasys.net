@@ -58,3 +58,10 @@ will re-deploy the entire site.
 hugo
 hugo deploy
 ```
+
+### Update theme(s)
+
+1. `git submodule foreach git pull upstream master`
+1. `hugo server` and test via browser
+1. `git submodule foreach git push`
+1. `git commit -am 'update theme [for feature x]'`
