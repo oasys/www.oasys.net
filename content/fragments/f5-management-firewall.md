@@ -63,4 +63,14 @@ In the web UI, this is configured under "System" > "Platform" > "Security".
 
 Via `tmsh`, use `modify /security firewall management-ip-rules ...`.
 
+----
+
+Interestingly, while researching this topic I found a knowledge base
+[article][include] that indicates that the `/sys ntp` section has an
+`include` directive that allows you to essentially put anything you want
+in the `/etc/ntp.conf` file.  I haven't needed this, but it looks to be
+a great configuration "escape hatch" if you need features/knobs that are
+not exposed by `tmsh` or the web UI.
+
 [kb]: https://support.f5.com/csp/article/K46122561
+[include]: https://support.f5.com/csp/article/K13380
