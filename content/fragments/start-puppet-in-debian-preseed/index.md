@@ -46,4 +46,4 @@ clause.
 
 Newer distribution versions use `systemd`, where this approach no longer
 works.  In addition, the puppet agent is now disabled by default on new
-installs.  The `else` clause in the second part address this case.
+installs.  The `else` clause in the second part addresses this case.
