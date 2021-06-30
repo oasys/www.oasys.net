@@ -41,8 +41,21 @@ brew install hugo
 
 ## Local Editing
 
+### Local Server
+
 ```sh
 hugo server -D
+```
+
+### Link Checking
+
+```sh
+brew install htmltest
+```
+
+```sh
+hugo
+htmltest
 ```
 
 ## Deploy
