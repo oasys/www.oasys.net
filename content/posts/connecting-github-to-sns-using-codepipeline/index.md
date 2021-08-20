@@ -20,7 +20,7 @@ disableShare: false
 disableHLJS: false
 searchHidden: false
 cover:
-    image: "codepipeline-cover.png"
+    image: "cover.png"
     alt: "Process flow of a GitHub AWS Connector App connecting to CodePipeline and publishing to an SNS topic"
     relative: true
 
