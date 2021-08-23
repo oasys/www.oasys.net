@@ -26,7 +26,6 @@ cover:
 
 ---
 
-
 ## Motivation and Design
 
 I have a bunch of "audit scripts" that run against the network
