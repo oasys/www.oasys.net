@@ -51,7 +51,7 @@ all the authentication complexity for you.
 [codestar]: https://aws.amazon.com/codestar/
 [connections]: https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html
 [github-apps]: https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps
-[last-post]: {{< ref "/posts/publish-to-sns-with-github-webhooks" >}}
+[last-post]: {{< relref "/posts/publish-to-sns-with-github-webhooks" >}}
 
 ## The Design
 
