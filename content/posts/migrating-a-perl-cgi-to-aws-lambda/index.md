@@ -3,6 +3,7 @@ title: "Migrating a Perl CGI to AWS Lambda"
 date: 2021-08-30
 tags:
   - perl
+  - terraform
   - aws
   - lambda
   - s3
