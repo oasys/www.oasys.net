@@ -57,3 +57,10 @@ ideas:
   example: |
     experiences with go programming and adding a secondary zone resource
     type to cloudflare provider
+- title: optimizing blog images
+  links:
+  - https://www.linkedin.com/post-inspector/inspect/
+  - https://blog.hootsuite.com/social-media-image-sizes-guide/
+  example: |
+    twitter
+    openid?  card?
