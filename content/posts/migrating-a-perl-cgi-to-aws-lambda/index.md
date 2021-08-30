@@ -1,5 +1,5 @@
 ---
-title: "Migrating a perl CGI to AWS Lambda"
+title: "Migrating a Perl CGI to AWS Lambda"
 date: 2021-08-30
 tags:
   - perl
@@ -39,7 +39,7 @@ a CGI script that reads our firewall configurations and presents a
 web page for visualizing and searching the many object-groups and
 access-lists.  I chose to migrate this to run as a [Lambda][lambda].
 
-What makes this notable, is this CGI script was written in perl.  Perl
+What makes this notable, is this CGI script was written in Perl.  Perl
 is **not** one of the AWS Lambda's natively supported languages, Java
 Go, PowerShell, Node.js, C#, Python, and Ruby (at the time of this
 writing).  The perl community has done some work already to leverage
@@ -50,7 +50,7 @@ the Lambda Runtime API to run perl, which I've used here.
 [cloudfront]: https://aws.amazon.com/cloudfront/
 [lambda]: https://aws.amazon.com/lambda/
 
-## Why perl
+## Why Perl
 
 Why not just rewrite the script in a different language?  I considered
 this first, but due to the complexity of the script, I thought that
@@ -148,7 +148,7 @@ example writes its output to a publicly-available S3 bucket.
 [okta]: https://www.okta.com
 [last-post]: {{< relref "/posts/publish-to-sns-with-github-webhooks" >}}
 
-## Public website
+## Public Website
 
 Create a simple S3 public website to serve the generated file(s).  To
 prevent unintentional data exposure, AWS has made it the default for
@@ -238,10 +238,10 @@ resource "aws_iam_role" "fwacl" {
 
 The Lambda function uses the [AWS::Lambda][perl-aws-lambda] module.
 This works by using the generic AWS Linux 2 runtime and specifying the
-`AWS::Lambda` layer.  The script uses some additional perl modules,
+`AWS::Lambda` layer.  The script uses some additional Perl modules,
 [Paws][paws] and [CGI][cgipm].  `Paws` is provided by another layer,
 as referenced in the [AWS::Lambda Documentation][paws-support].  Since
-[CGI.pm is no longer in the perl core][cgipm-core], we also reference a
+[CGI.pm is no longer in the Perl core][cgipm-core], we also reference a
 custom layer (which we will build later) including this module.
 
 Configure the function to use the IAM role create earlier, giving it
@@ -254,7 +254,7 @@ so they do not need to be defined here.
 
 The `function_name` and `handler` attributes tell `AWS::Lambda` where
 to find the handler routing.  With this configuration, it will call the
-perl subroutine named `handler` in the file `fwacl.pl` in the Lambda zip
+Perl subroutine named `handler` in the file `fwacl.pl` in the Lambda zip
 archive.
 
 [perl-aws-lambda]: https://metacpan.org/pod/AWS::Lambda
@@ -292,7 +292,7 @@ resource "aws_lambda_function" "fwacl" {
 
 ## Custom Layer
 
-Here the custom layer is defined to to provide the perl `CGI` module.
+Here the custom layer is defined to to provide the Perl `CGI` module.
 
 ```terraform
 resource "aws_lambda_layer_version" "cgipm" {
@@ -305,7 +305,7 @@ resource "aws_lambda_layer_version" "cgipm" {
 ```
 
 A bash script is used to build the layer locally so terraform can upload
-it to AWS.  Any perl modules listed in the `PERL_MODULES` variable will
+it to AWS.  Any Perl modules listed in the `PERL_MODULES` variable will
 be included in this layer.
 
 ```bash
@@ -360,10 +360,10 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
 }
 ```
 
-## The function
+## The Perl Function
 
 Here I show the `handler` subroutine.  `AWS::Lambda` calls it with
-two arguments, a payload and a context object.  These are native perl
+two arguments, a payload and a context object.  These are native Perl
 data structures decoded from the AWS json payload and constructed from
 environment variables, respectively.
 
@@ -372,7 +372,7 @@ statements.  The files from these packages are present on the lambda's
 disk by nature of the added layers, and can be used normally.
 
 I don't show all the supporting subroutines, as they already existed
-in the original perl script.  This handler routine is essentially a
+in the original Perl script.  This handler routine is essentially a
 wrapper around what was already there, looping over the provided records
 (objects in the bucket that have changed), reading the data from S3
 (`GetObject`), processing the data, and writing the output back to the
