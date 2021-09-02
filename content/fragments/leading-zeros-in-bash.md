@@ -16,10 +16,11 @@ disableHLJS: false
 searchHidden: false
 ---
 
-A team member reported a problem with pre-commit hook I wrote,
-[`check-dns-serial`][check-dns-serial], which ensures the SOA serial
-number is updated on any modified zone files.  The script was giving
-them an error when they made a commit after the 8th revision in a day.
+A team member reported a problem with [pre-commit][pre-commit] hook I
+wrote, [`check-dns-serial`][check-dns-serial], which ensures the SOA
+serial number is updated on any modified zone files.  The script was
+giving them an error when they made a commit after the 8th revision in a
+day.
 
 It was an interesting bug in a bash script that I thought might be
 helpful to share.  The serial number is, by convention, stored as a date
@@ -86,6 +87,7 @@ index 4a198c7..2fa7d5f 100755
        continue
 ```
 
+[pre-commit]: https://pre-commit.com
 [check-dns-serial]: https://github.com/bowdoincollege/noc-commit-hooks/blob/master/hooks/check-dns-serial.sh
 [dns-increment]: https://github.com/slaught/enki_cloud/blob/master/scripts/scripts/dns-increment
 [diff]: https://github.com/bowdoincollege/noc-commit-hooks/commit/559b27b7111c877f1dc781bf8e84c1495752a733#diff-f2cf5079db4c08923f95b519db529579b6380b813e7834d3819082aa75e1407b
