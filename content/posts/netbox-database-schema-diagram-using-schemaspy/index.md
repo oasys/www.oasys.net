@@ -3,7 +3,7 @@ title: "Netbox database schema diagram using schemaspy"
 date: 2021-09-14
 tags:
   - netbox
-  - postresql
+  - postgresql
   - data visualization
 categories:
   - networking
