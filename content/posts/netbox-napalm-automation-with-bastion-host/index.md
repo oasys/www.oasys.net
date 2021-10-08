@@ -15,7 +15,7 @@ disableShare: false
 disableHLJS: false
 searchHidden: false
 cover:
-    image: "device.png"
+    image: "cover.png"
     alt: "NetBox device view with additional NAPALM tabs"
     caption: "NetBox device view with additional NAPALM tabs"
     relative: true
