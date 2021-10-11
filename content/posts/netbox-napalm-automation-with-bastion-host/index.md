@@ -65,11 +65,11 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Add the public key to the `~/.ssh/authorized_hosts` in the target user
-account on the bastion host.  In our configuration, this is an account
-(same username, `netbox`) without password authentication enabled, so
-we use puppet to synchronize the keys.  In a simpler system, you can
-just use `ssh-copy-id`, something like:
+Add the public key to the `~/.ssh/authorized_hosts` file in the target
+user account on the bastion host.  In our configuration, this is an
+account (same username, `netbox`) without password authentication
+enabled, so we use puppet to synchronize the keys.  In a simpler system,
+you can just use `ssh-copy-id`, something like:
 
 ```bash
 netbox@p-netbox-a:~$ ssh-copy-id netbox@bastion
