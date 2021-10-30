@@ -214,3 +214,56 @@ In less than a day of watching, we were able to get a capture of the DNS
 response.  The provider acknowledged the problem, gave us a workaround
 (a different subdomain to use), and is working on a more permanent
 solution.
+
+## A Better Approach
+
+I posted this to twitter, and [@netresec](https://twitter.com/netresec)
+responded with a comment suggesting another approach.
+
+{{< tweet 1454038986071191553 >}}
+
+<!--
+Nice solution! Would a oneliner like this have worked as well?
+tcpdump -U -i enp6s0 -w - | tshark -r - -Y "dns.qry[.]name contains ebscohost"
+-->
+
+I had already tried something like this but dismissed it because when I
+tried it the resulting `.pcap` files were truncated, causing data loss.
+The output file was always an increment of 4k, so I assumed that this
+was due to the way tcpdump buffered data when writing to the pipe.
+
+{{< figure src="wireshark-truncated.png" align="center"
+    caption="Wireshark error message" >}}
+
+I didn't remember if I had tried the `-U` option, so I tried it again.
+It worked perfectly on my macOS install (with stock `tcpdump` and
+`wireshark`/`tshark` installed via [Homebrew][homebrew]), but failed as
+before when I ran it on the actual server.
+
+I spun up a few different docker containers to test and found that
+Debian buster exhibits this problem, but bullseye works with the single
+pipeline.  This is a much more elegant solution, which I will definitely
+use in the future:
+
+```bash
+sudo tcpdump -U -ni enp6s0 -s1500 -w- port 53 | tshark -s1500 -w /tmp/ebscohost.pcap -r- -Y 'dns.qry.name ~ ebscohost.com or dns.qry.name ~ eislz.com'
+```
+
+I suspect it is an issue with the version of `tcpdump` or
+`libpcap`. Rather than investigating further, I'll spend the time
+planning and testing an OS upgrade of the servers.
+
+{{< disclose open=true
+    summary="For the record, these are the versions I tested:" >}}
+
+<!-- markdownlint-disable MD033 -->
+| OS Version      | App versions                                                                                                        | Works |
+| ---             | ---                                                                                                                 | ---   |
+| macOS 10.15.7   | tcpdump 4.9.3 -- Apple version 90.100.2 <br> libpcap 1.9.1 <br> TShark (Wireshark) 3.4.9 (v3.4.9-0-g365e236f5efe)   | Yes   |
+| Debian buster   | tcpdump 4.9.3 <br> libpcap 1.8.1 <br> TShark (Wireshark) 2.6.20 (Git v2.6.20 packaged as 2.6.20-0+deb10u1)          | No    |
+| Debian bullseye | tcpdump 4.99.0 <br> libpcap 1.10.0 (with TPACKET_V3) <br> TShark (Wireshark) 3.4.4 (Git v3.4.4 packaged as 3.4.4-1) | Yes   |
+<!-- markdownlint-enable MD033 -->
+
+{{< /disclose >}}
+
+[homebrew]: https://brew.sh
