@@ -65,7 +65,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Add the public key to the `~/.ssh/authorized_hosts` file in the target
+Add the public key to the `~/.ssh/authorized_keys` file in the target
 user account on the bastion host.  In our configuration, this is an
 account (same username, `netbox`) without password authentication
 enabled, so we use puppet to synchronize the keys.  In a simpler system,
