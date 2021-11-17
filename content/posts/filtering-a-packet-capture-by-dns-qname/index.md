@@ -220,7 +220,7 @@ solution.
 I posted this to twitter, and [@netresec](https://twitter.com/netresec)
 responded with a comment suggesting another approach.
 
-{{< tweet 1454038986071191553 >}}
+{{< tweet user="netresec" id="1454038986071191553" >}}
 
 <!--
 Nice solution! Would a oneliner like this have worked as well?
