@@ -133,7 +133,7 @@ If I had not filtered the output above, IOS *does* give another hint about
 the cause: "`Adv Router is not-reachable`...". (Unfortunately I don't
 see about corresponding message on a similar NXOS router.)
 
-```ios
+```text {hl_lines=[7]}
 R1#sh ip os da ro 172.16.0.2
 
             OSPF Router with ID (172.16.0.1) (Process ID 10)
