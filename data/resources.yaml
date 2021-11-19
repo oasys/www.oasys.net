@@ -4,3 +4,5 @@ resources:
   omnigraffle_icons:
   - http://code.benco.io/icon-collection/
   - https://docs.microsoft.com/en-us/azure/architecture/icons/
+  network_icons:
+  - https://github.com/bwks/network-icons-svg
