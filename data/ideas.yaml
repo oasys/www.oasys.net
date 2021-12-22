@@ -64,3 +64,8 @@ ideas:
   example: |
     twitter
     openid?  card?
+- title: powershell vim mode
+  links:
+  - https://newbedev.com/windows-powershell-vim-keybindings
+  example: |
+    Set-PSReadlineOption -EditMode vi
