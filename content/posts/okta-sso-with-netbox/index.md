@@ -94,7 +94,7 @@ one.
 variable "hostname" { default = "netbox.example.com" }
 
 resource "okta_app_oauth" "netbox" {
-  label                     = "NetBox Terraform"
+  label                     = "NetBox"
   type                      = "web"
   grant_types               = ["authorization_code", "client_credentials", "implicit"]
   response_types            = ["code", "token", "id_token"]
