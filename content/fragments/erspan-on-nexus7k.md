@@ -23,12 +23,13 @@ Today, while troubleshooting a reported SIP trunking issue, I was
 seeing a firewall claiming it was transmitting packets, but they
 were not seen by the downstream endpoint.  I didn't trust the ASA
 packet capture in this case, so I decided to collect traffic from its
-immediately-connected device, a Nexus 7009, to verify.
+immediately-connected device, a Nexus 7009, to verify.  Cisco has a
+[technote][technote] for a configuration example on this platform.
 
 ERSPAN is handy to be able to do ad-hoc troubleshooting when you
 need to a packet capture from a remote device, so I configured an
 `erspan-source` session to capture traffic on that particular interface
-and send it to a remote Linux machine.
+and sent it to a remote Linux machine.
 
 This deployment has multiple VDCs on the chassis, so the source IP of
 the ERSPAN GRE tunnel needs to be configured in the admin VDC of the
@@ -57,8 +58,8 @@ monitor session 1 type erspan-source
   no shut
 ```
 
-Traffic is be encapsulated and sent to the target device.  Wireshark
-will fully decode the traffic including the original packet in the GRE
+Traffic is encapsulated and sent to the target device.  Wireshark will
+fully decode the traffic including the original packet in the GRE
 payload.  In this particular situation, though, there was lots of other
 traffic and I needed to filter only the packets I was concerned about.
 I used packet offsets in the `tcpdump` filter expression to match UDP
@@ -74,3 +75,5 @@ By doing a simultaneous capture both locally on the ASA and via ERSPAN
 on the adjacent switch, I was able to prove that the packets in question
 were indeed not on the wire.  The actual issue isn't solved, but this
 allowed me to quickly isolate the problem to one device.
+
+[technote]: https://www.cisco.com/c/en/us/support/docs/switches/nexus-7000-series-switches/113480-erspan-nexus-7k-00.html
