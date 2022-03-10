@@ -1,5 +1,5 @@
 ---
-title: "How to Identify private MAC addresses"
+title: "How to Identify Private MAC Addresses"
 date: 2022-03-09
 tags:
   - networking
