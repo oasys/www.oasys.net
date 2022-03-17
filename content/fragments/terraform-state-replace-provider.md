@@ -115,3 +115,14 @@ This means that Terraform did not detect any differences between your
 configuration and real physical resources that exist. As a result, no
 actions need to be performed.
 ```
+
+If you need to script this for multiple workspaces, use something like
+the following command:
+
+```bash
+$ terraform state pull |
+  jq -r '.resources|.[].provider' |
+  grep "registry.terraform.io/-/" |
+  cut -d'"' -f2 | cut -d/ -f3 | uniq |
+  xargs -I% terraform state replace-provider -auto-approve "registry.terraform.io/-/%" "hashicorp/%"
+```
