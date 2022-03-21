@@ -11,6 +11,7 @@ resource "aws_cloudfront_distribution" "dist" {
 
   # checkov:skip=CKV_AWS_68:do not require WAF to reduce costs
   # checkov:skip=CKV_AWS_86:no access logging
+  # checkov:skip=CKV2_AWS_32:security headers
 
   origin {
     domain_name = aws_s3_bucket.public.website_endpoint

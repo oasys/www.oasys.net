@@ -3,10 +3,15 @@ resource "aws_s3_bucket" "public" {
   force_destroy = true
 
   # checkov:skip=CKV_AWS_21:versioning not needed
+  # checkov:skip=CKV2_AWS_37:versioning not needed
   # checkov:skip=CKV_AWS_18:access logging disabled for cost savings
+  # checkov:skip=CKV2_AWS_41:access logging disabled for cost savings
   # checkov:skip=CKV_AWS_19:encryption disabled, public bucket
-  # checkov:skip=CKV_AWS_20:public bucket
-  # checkov:skip=CKV_AWS_52:no MFA delete, not canonical source
+  # checkov:skip=CKV2_AWS_40:encryption disabled, public bucket
+  # checkov:skip=CKV_AWS_144:replication not needed
+  # checkov:skip=CKV_AWS_145:KMS encryption not needed, public bucket
+  # checkov:skip=CKV2_AWS_6:public access block not needed
+  # checkov:skip=CKV2_AWS_38:public bucket
 
   tags = merge(local.tags, {
     Name = "${var.domain} bucket"
