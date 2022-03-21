@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "dist" {
   # checkov:skip=CKV2_AWS_32:security headers
 
   origin {
-    domain_name = aws_s3_bucket.public.website_endpoint
+    domain_name = aws_s3_bucket_website_configuration.website.website_endpoint
     origin_id   = aws_s3_bucket.public.id
     custom_origin_config {
       http_port              = "80"
