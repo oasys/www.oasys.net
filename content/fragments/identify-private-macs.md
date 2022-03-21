@@ -16,9 +16,6 @@ description: |
 disableShare: false
 disableHLJS: false
 searchHidden: false
-cover:
-  hiddenInList: true
-  image: /logo.png
 
 ---
 
