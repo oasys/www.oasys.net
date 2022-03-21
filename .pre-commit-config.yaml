@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v3.4.0
+  rev: v4.1.0
   hooks:
   - id: trailing-whitespace
     exclude: .gitignore
@@ -9,20 +9,20 @@ repos:
   - id: check-added-large-files
     args: [--maxkb=2048]
 - repo: https://github.com/adrienverge/yamllint.git
-  rev: v1.26.0
+  rev: v1.26.3
   hooks:
   - id: yamllint
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks.git
-  rev: v2.0.0
+  rev: v2.3.0
   hooks:
   - id: pretty-format-yaml
     args: [--autofix, --indent, '2']
-- repo: git://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.46.0
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.64.0
   hooks:
   - id: terraform_docs
 - repo: https://github.com/gruntwork-io/pre-commit
-  rev: v0.1.12
+  rev: v0.1.17
   hooks:
   - id: terraform-fmt
   - id: terragrunt-hclfmt
@@ -30,15 +30,15 @@ repos:
   - id: tflint
   - id: shellcheck
 - repo: https://github.com/igorshubovych/markdownlint-cli
-  rev: v0.26.0
+  rev: v0.31.1
   hooks:
   - id: markdownlint
 - repo: https://github.com/bridgecrewio/checkov.git
-  rev: 1.0.806
+  rev: 2.0.978
   hooks:
   - id: checkov
 - repo: https://github.com/codespell-project/codespell
-  rev: v2.0.0
+  rev: v2.1.0
   hooks:
   - id: codespell
     args:
