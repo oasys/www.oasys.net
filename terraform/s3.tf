@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "public" {
   bucket        = var.domain
-  acl           = "public-read"
   force_destroy = true
 
   # checkov:skip=CKV_AWS_21:versioning not needed
@@ -12,6 +11,11 @@ resource "aws_s3_bucket" "public" {
   tags = merge(local.tags, {
     Name = "${var.domain} bucket"
   })
+}
+
+resource "aws_s3_bucket_acl" "public-read" {
+  bucket = aws_s3_bucket.public.id
+  acl    = "public-read"
 }
 
 resource "aws_s3_bucket_website_configuration" "website" {
