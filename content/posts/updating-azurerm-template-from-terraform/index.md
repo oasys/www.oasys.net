@@ -409,7 +409,7 @@ timeout for our tenant.
 ## Updating the template
 
 The main disadvantage to this design is that terraform is managing the
-deployment, _not_ the individual resources created by the deployment.
+deployment, *not* the individual resources created by the deployment.
 That said, it is possible to use terraform to update the managed
 instance *in-place* by updating the template (or just its parameters).
 

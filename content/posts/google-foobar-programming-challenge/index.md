@@ -46,7 +46,7 @@ challenges of increasing difficulty to advance the plot.
 ## Disclaimer
 
 I am sharing this code both to document my work and for others who may
-not (yet) have access to the challenges.  If you _are_ currently taking
+not (yet) have access to the challenges.  If you *are* currently taking
 the Foobar Challenge, please do not copy these solutions.  Doing so will
 deprive you of the fun and learning of working through the problems
 yourself.
