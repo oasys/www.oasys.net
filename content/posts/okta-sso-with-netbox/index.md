@@ -37,7 +37,7 @@ manage user access.
 As of NetBox version [3.1.0][v3.1.0], native support
 for SSO authentication was added via inclusion of
 [python-social-auth][social-auth].  This library supports [many
-backends][backends], including Okta via both [OAuth2][oath2] and
+backends][backends], including Okta via both [OAuth2][oauth2] and
 [OpenId Connect][openid].  Until then, the only options for an external
 authentication provider were [LDAP][LDAP], an external [plugin][plugin], or
 moving the authentication to a proxy and passing the results to netbox via
