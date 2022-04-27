@@ -20,7 +20,7 @@ hidemeta: false
 comments: false
 description: |
   Using NetBox as a source of truth for E911 data
-  with Microsoft Teams and Intrado Emergency Responder
+  with Microsoft Teams and Intrado Emergency Gateway
 disableShare: false
 disableHLJS: false
 searchHidden: false
