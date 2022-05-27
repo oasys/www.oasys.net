@@ -90,7 +90,7 @@ this path, as I did not want to modify the repositories themselves and
 wanted to manage this entirely within Terraform.
 
 [actions]: https://github.com/features/actions
-[github-action-publis-sns]: https://github.com/marketplace/actions/aws-sns-publish-topic
+[github-action-publish-sns]: https://github.com/marketplace/actions/aws-sns-publish-topic
 
 ## API Gateway Service Proxy
 
