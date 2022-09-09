@@ -69,3 +69,64 @@ ideas:
   - https://newbedev.com/windows-powershell-vim-keybindings
   example: |
     Set-PSReadlineOption -EditMode vi
+- title: git lock
+  example: |
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ git commit -am 'bump provider versions for darwin_arm64 support'
+    fatal: cannot run .git/hooks/pre-commit: No such file or directory
+    Segmentation fault: 11
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ pre-commit install
+    pre-commit installed at .git/hooks/pre-commit
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ git commit -am 'bump provider versions for darwin_arm64 support'
+    fatal: Unable to create '/Users/jlavoie/aws/s3proxy/.git/index.lock': File exists.
+
+    Another git process seems to be running in this repository, e.g.
+    an editor opened by 'git commit'. Please make sure all processes
+    are terminated then try again. If it still fails, a git process
+    may have crashed in this repository earlier:
+    remove the file manually to continue.
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ ls -al
+    total 104
+    drwxr-xr-x  16 jlavoie  staff   512 Jul 14 15:27 .
+    drwxr-xr-x  17 jlavoie  staff   544 Aug 31  2021 ..
+    drwxr-xr-x  14 jlavoie  staff   448 Jul 14 15:27 .git
+    -rw-r--r--   1 jlavoie  staff  1593 May 13  2020 .gitignore
+    -rw-r--r--   1 jlavoie  staff   651 Oct 20  2020 .pre-commit-config.yaml
+    -rw-r--r--   1 jlavoie  staff    61 May 13  2020 .shellcheckrc
+    drwx------   4 jlavoie  staff   128 Feb  9  2021 .terraform
+    -rw-r--r--   1 jlavoie  staff   459 Feb  9  2021 .terraform.lock.hcl
+    -rw-r--r--   1 jlavoie  staff   408 Feb  9  2021 .tflint.hcl
+    -rw-r--r--   1 jlavoie  staff  1591 Feb  9  2021 README.md
+    -rw-r--r--   1 jlavoie  staff   250 May 13  2020 data.tf
+    -rw-r--r--   1 jlavoie  staff  5419 Feb  9  2021 main.tf
+    -rw-r--r--   1 jlavoie  staff   366 Feb  9  2021 outputs.tf
+    -rw-r--r--   1 jlavoie  staff  1597 May 20  2020 user_data.sh.tmpl
+    -rw-r--r--   1 jlavoie  staff  1295 May 13  2020 variables.tf
+    -rw-r--r--   1 jlavoie  staff   227 Jul 14 15:27 versions.tf
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ ^C
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ git commit -am 'bump provider versions for darwin_arm64 support'
+    fatal: Unable to create '/Users/jlavoie/aws/s3proxy/.git/index.lock': File exists.
+
+    Another git process seems to be running in this repository, e.g.
+    an editor opened by 'git commit'. Please make sure all processes
+    are terminated then try again. If it still fails, a git process
+    may have crashed in this repository earlier:
+    remove the file manually to continue.
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ ls -al .git
+    total 64
+    drwxr-xr-x  14 jlavoie  staff   448 Jul 14 15:27 .
+    drwxr-xr-x  16 jlavoie  staff   512 Jul 14 15:27 ..
+    -rw-r--r--   1 jlavoie  staff    19 Feb  9  2021 COMMIT_EDITMSG
+    -rw-r--r--   1 jlavoie  staff   228 Jul 14 15:25 FETCH_HEAD
+    -rw-r--r--   1 jlavoie  staff    23 Feb  9  2021 HEAD
+    -rw-r--r--   1 jlavoie  staff    41 Jul 14 15:25 ORIG_HEAD
+    -rw-r--r--   1 jlavoie  staff   381 Oct 20  2020 config
+    drwxr-xr-x   3 jlavoie  staff    96 May 13  2020 hooks
+    -rw-r--r--   1 jlavoie  staff   930 Jul 14 15:12 index
+    -rw-r--r--   1 jlavoie  staff   930 Jul 14 15:27 index.lock
+    drwxr-xr-x   4 jlavoie  staff   128 May 13  2020 logs
+    drwxr-xr-x  39 jlavoie  staff  1248 Jul 14 15:27 objects
+    -rw-r--r--   1 jlavoie  staff   172 May 13  2020 packed-refs
+    drwxr-xr-x   5 jlavoie  staff   160 Feb  9  2021 refs
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ rm .git/ind
+    index       index.lock
+    moonstone:~/aws/s3proxy/(master*%=)[default]$ rm .git/index.lock
