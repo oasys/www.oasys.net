@@ -4,14 +4,20 @@ layout: about
 
 ---
 
+I'm currently employed at [Akamai Technologies](https://www.akamai.com)
+as a Senior Network Architect on the Edge Technology Group, working
+with the [Linode](https://www.linode.com) Network Engineering team on
+building automation and tooling for managing the expansion of networking
+infrastructure.
 
-I've led the networking team at [Bowdoin
+Previously, I led the networking team at [Bowdoin
 College](https://www.bowdoin.edu/) as the Director of Networking and
-Infrastructure since 2003. Before my time in Higher Education, I worked
-primarily in the ISP industry, founding a start-up in 1995 and later at
-regional and large national providers.  I have also had the opportunity
-to complete various consulting projects in the areas of network design,
-content distribution, systems integration, and cloud enablement.
+Infrastructure for over 19 years. Before my time in Higher Education, I
+worked primarily in the ISP industry, founding a start-up in 1995 and
+later at regional and large national providers.  I have also had the
+opportunity to complete various consulting projects in the areas of
+network design, content distribution, systems integration, and cloud
+enablement.
 
 I love sharing tidbits and thoughts about what I'm currently working
 on, both for my own reference and as a way to help others who might be
