@@ -7,12 +7,17 @@ github: oasys
 sections:
 - heading: Work History
   subsections:
+  - heading: Akamai Technologies, Senior Network Architect
+    startdate: Oct. 2022
+    points:
+    - >-
+      Build automation and tooling for edge compute networking
   - heading: Bowdoin College, Director of Networking and Infrastructure
     startdate: Aug. 2003
+    enddate: Sep. 2022
     points:
-    - Principal network architect for a prestigious liberal arts college.
     - >-
-      Lead a team in engineering and operations of network, telecom, cloud,
+      Led a team in engineering and operations of network, telecom, cloud,
       and datacenter infrastructure.
   - heading: Prexar, Lead Network Engineer
     startdate: June 2001
@@ -26,19 +31,14 @@ sections:
     enddate: June 2001
     points:
     - >-
-      Designed and implemented a scalable and robust infrastructure for a
+      Designed and implemented a scalable and robust ASP infrastructure for a
       national commercial webhosting product.
-    - Led project development for flexible ASP systems in a shared environment.
-  - heading: The Maine InternetWorks (MINT), Network Engineer
+  - heading: The Maine InternetWorks (MINT), Co-Founder and Network Engineer
     startdate: May 1993
     enddate: Oct. 1999
     points:
     - >-
-      Responsible for design and implementation of network, servers,
-      and telco facilities for a 20,000+ user ISP.
-    - >-
-      Designed and deployed municipal and residential cable modem networks
-      for multiple cable companies.
+      Designed and supported infrastructure for 20k-user ISP and cable modem networks for multiple regional MSOs.
 - heading: Notable Experience
   subsections:
   - heading: Hybrid Cloud Connectivity
@@ -62,6 +62,7 @@ sections:
       next-generation wireless from multiple vendors.
     - Deployed campus wireless network in numerous RF-challenging environments.
   - heading: IP Telephony
+    hide: true     # trim some entries to fit on single page
     points:
     - >-
       Migrated a 3000-extension campus phone system from a legacy PBX to
