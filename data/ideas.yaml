@@ -69,6 +69,32 @@ ideas:
   - https://newbedev.com/windows-powershell-vim-keybindings
   example: |
     Set-PSReadlineOption -EditMode vi
+- title: bash script profiling
+  example: |
+    # one way
+    #PS4='+ $EPOCHREALTIME\011 '
+    #exec 5> bashrcprofile.txt
+    #BASH_XTRACEFD="5"
+    #set -x
+
+    # another way
+    # start
+    exec 3>&2 2> >( tee bashrcprofile.log |
+                      sed -u 's/^.*$/now/' |
+                      /opt/homebrew/bin/gdate -f - +%s.%N >bashrcprofile.tim)
+    set -x
+    # ... code ...
+    # end
+    set +x
+    exec 2>&3 3>&-
+    # after, analyze
+    paste <(
+        while read tim ;do
+            crt=000000000$((${tim//.}-10#0$last))
+            printf "%12.9f\n" ${crt:0:${#crt}-9}.${crt:${#crt}-9}
+            last=${tim//.}
+        done < bashrcprofile.tim
+    ) bashrcprofile.log
 - title: git lock
   example: |
     moonstone:~/aws/s3proxy/(master*%=)[default]$ git commit -am 'bump provider versions for darwin_arm64 support'
