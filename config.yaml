@@ -90,6 +90,8 @@ params:
     url: https://github.com/oasys
   - name: linkedin
     url: https://www.linkedin.com/in/jlavoie/
+  - name: mastodon
+    url: https://mastodon.social/@oasys
   - name: twitter
     url: https://twitter.com/ratvarre
   - name: email
