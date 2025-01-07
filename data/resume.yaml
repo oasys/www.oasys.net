@@ -7,8 +7,11 @@ github: oasys
 sections:
 - heading: Work History
   subsections:
+  - heading: Akamai Technologies, Principal SRE, Cloud Networking Infrastucture
+    startdate: Oct. 2023
   - heading: Akamai Technologies, Senior Network Architect
     startdate: Oct. 2022
+    enddate: Oct. 2023
     points:
     - >-
       Build automation and tooling for edge compute networking
@@ -129,4 +132,4 @@ sections:
   - >-
     Programming Languages: Python, Perl, Bash, Ruby
   - >-
-    Cloud providers: AWS and Azure
+    Cloud providers: AWS, Azure, Linode / Akamai Connected Cloud, GCP

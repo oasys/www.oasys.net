@@ -5,10 +5,10 @@ layout: about
 ---
 
 I'm currently employed at [Akamai Technologies](https://www.akamai.com)
-as a Senior Network Architect on the Edge Technology Group, working
-with the [Linode](https://www.linode.com) Network Engineering team on
-building automation and tooling for managing the expansion of networking
-infrastructure.
+as a Principal SRE in the Cloud Technology Group, working with the
+[Linode](https://www.linode.com) Cloud Network Infrastructure team on
+building automation and tooling for ongoing management and expansion of
+networking infrastructure.
 
 Previously, I led the networking team at [Bowdoin
 College](https://www.bowdoin.edu/) as the Director of Networking and
