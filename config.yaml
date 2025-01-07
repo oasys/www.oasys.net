@@ -1,6 +1,5 @@
 baseURL: https://www.oasys.net
 title: Oasys Networking
-paginate: 20
 theme: PaperMod
 
 defaultContentLanguage: en
@@ -9,6 +8,8 @@ enableGitInfo: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+pagination:
+  pagerSize: 20
 
 googleAnalytics: 364439819
 
@@ -47,7 +48,7 @@ deployment:
     gzip: true
 
 params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  env: production  # to enable google analytics, opengraph, twitter-cards and schema.
   title: Oasys
   description: Oasys Blog
   author: Jason Lavoie
@@ -98,9 +99,9 @@ params:
     url: mailto:jason@oasys.net
 
   cover:
-    hidden: false # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: false # hide on single page
+    hidden: false  # hide everywhere but not in structured data
+    hiddenInList: false  # hide on list pages and home
+    hiddenInSingle: false  # hide on single page
     responsiveImages: true
     linkFullImages: false
 

@@ -36,7 +36,7 @@
       <content:encoded>
       {{- "<![CDATA[" | safeHTML }}
       {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden}}
-      {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+      {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
       {{- .Content }}]]></content:encoded>
     </item>
     {{- end }}
